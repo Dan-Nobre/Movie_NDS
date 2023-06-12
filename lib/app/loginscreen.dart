@@ -23,16 +23,24 @@ class _LoginScreenState extends State<LoginScreen> {
               fit: BoxFit.contain,
               height: 27,
             ),
-            Container(padding: const EdgeInsets.all(82), child: Text("Login"))
+            Container(padding: const EdgeInsets.all(82), 
+            child: Text(
+              "Login",
+            style: TextStyle(
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.bold
+              
+            )
+            ,))
           ],
         ),
+        elevation: 0,
       ),
       body: Container(
         
         child: SingleChildScrollView(
           padding: EdgeInsets.all(20),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
 
@@ -41,8 +49,10 @@ class _LoginScreenState extends State<LoginScreen> {
               TextField(
                 keyboardType: TextInputType.emailAddress, 
                 decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
                   hintText: "hola@soytian.tech",
-                  labelText: 'E-mail',
+                  // labelText: 'E-mail',
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8.0)
                   ),
@@ -55,6 +65,8 @@ class _LoginScreenState extends State<LoginScreen> {
               TextField(
                 obscureText: true,
                 decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
                   labelText: 'Password',
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8.0)
@@ -62,13 +74,49 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
 
-              Text("Forgot Your Password?"),
-
-              ElevatedButton(onPressed: () {},
-              child: Text("Continue"),
+              Padding(padding: EdgeInsets.only(bottom: 5)),
+            
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text("Forgot Your Password?",
+              style: TextStyle(
+                color: Color.fromRGBO(159, 159, 159, 1),
+                fontFamily: "Poppins"
+                ),
+              ),
               ),
 
-              Text("Don't have an account? Register!")
+              Padding(padding: EdgeInsets.only(bottom: 97)),
+            
+              SizedBox(
+                height: 40,
+                width: 250,
+                child: 
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromRGBO(100, 198, 97, 1),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(6)
+                    )
+                  ),
+                  onPressed: () {},
+              child: Text("Continue"),
+                ),
+              ),
+
+              
+
+              Padding(padding: EdgeInsets.only(bottom: 19)),
+
+              Align(
+                alignment: Alignment.center,
+                child: Text("Don't have an account? Register!",
+                style: TextStyle(
+                  color: Colors.white
+                ),
+                ),
+              )
+              
             ],
           ),
         ),
