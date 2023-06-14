@@ -9,11 +9,12 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   @override
+  
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(40, 40, 44, 1),
+      backgroundColor: const Color.fromRGBO(40, 40, 44, 1),
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(40, 40, 44, 1),
+        backgroundColor: const Color.fromRGBO(40, 40, 44, 1),
         centerTitle: true,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -23,162 +24,145 @@ class _LoginScreenState extends State<LoginScreen> {
               fit: BoxFit.contain,
               height: 27,
             ),
-            Container(padding: const EdgeInsets.all(82), 
-            child: Text(
-              "Login",
-            style: TextStyle(
-              fontFamily: 'Poppins',
-              fontWeight: FontWeight.bold
-              
-            )
-            ,))
+            Container(
+                padding: const EdgeInsets.all(82),
+                child: const Text(
+                  "Login",
+                  style: TextStyle(
+                      fontFamily: 'Poppins', fontWeight: FontWeight.bold),
+                ))
           ],
         ),
         elevation: 0,
       ),
       body: Container(
-        
         child: SingleChildScrollView(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
 
-              Padding(padding: EdgeInsets.only(bottom: 96)),
+              const Padding(padding: EdgeInsets.only(bottom: 96)),
 
-              Align(
+              const Align(
                 alignment: Alignment.centerLeft,
-                child: Text("E-mail",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w900
+                child: Text(
+                  "E-mail",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w900),
+                ),
+              ),
+
+              const Padding(padding: EdgeInsets.only(bottom: 5)),
+
+              SizedBox(
+                height: 44,
+                child: TextFormField(
+                decoration: InputDecoration(
+                  filled: true,
+                      fillColor: Colors.white,
+                      hintText: "hola@soytian.tech",
+                      // hintStyle: TextStyle(),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8.0)
+                      ),
                   ),
                 ),
               ),
-              
-              Padding(padding: EdgeInsets.only(bottom: 5)),
-              
+
+              const Padding(padding: EdgeInsets.only(bottom: 53)),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Password",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w900),
+                    ),
+                  ),
+                  Text(
+                    "Mandatory",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w900),
+                  ),
+                ],
+              ),
+
+              const Padding(padding: EdgeInsets.only(bottom: 5)),
+
               SizedBox(
-                width: 312,
                 height: 44,
-                child: FractionallySizedBox(
-                  alignment: Alignment.centerLeft,
-                  widthFactor: 0.9,
-                child: TextField(
-                  keyboardType: TextInputType.emailAddress, 
+                child: TextFormField(
+                  obscureText: true,
                 decoration: InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
-                  hintText: "hola@soytian.tech",
-                  hintStyle: TextStyle(fontSize: 16),
-                  // labelText: 'E-mail',
+                  // labelText: 'Password',
+                  hintText: 'Password',
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0)
+                    borderRadius: BorderRadius.circular(8.0),
                   ),
                 ),
                 ),
-                )
               ),
               
+
               // TextField(
-              //   keyboardType: TextInputType.emailAddress, 
+              //   obscureText: true,
               //   decoration: InputDecoration(
               //     filled: true,
               //     fillColor: Colors.white,
-              //     hintText: "hola@soytian.tech",
-              //     // labelText: 'E-mail',
+              //     labelText: 'Password',
               //     enabledBorder: OutlineInputBorder(
-              //       borderRadius: BorderRadius.circular(8.0)
+              //       borderRadius: BorderRadius.circular(8.0),
               //     ),
               //   ),
               // ),
 
-              Padding(padding: EdgeInsets.only(bottom: 53)),
+              const Padding(padding: EdgeInsets.only(bottom: 5)),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text("Password",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w900
-                      ),
-                    ),
-                  ),
-                    
-                    Text("Mandatory",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w900
-                      ),
-                    ),
-                  
-                ],
-              ) ,
-
-              
-              Padding(padding: EdgeInsets.only(bottom: 5)),
-
-              TextField(
-                obscureText: true,
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white,
-                  labelText: 'Password',
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0)
-                  )
-                ),
-              ),
-
-              Padding(padding: EdgeInsets.only(bottom: 5)),
-            
-              Align(
+              const Align(
                 alignment: Alignment.centerLeft,
-                child: Text("Forgot Your Password?",
-              style: TextStyle(
-                color: Color.fromRGBO(159, 159, 159, 1),
-                fontFamily: "Poppins"
+                child: Text(
+                  "Forgot Your Password?",
+                  style: TextStyle(
+                      color: Color(0xff9F9F9F), fontFamily: "Poppins"),
                 ),
               ),
-              ),
 
-              Padding(padding: EdgeInsets.only(bottom: 97)),
-            
+              const Padding(padding: EdgeInsets.only(bottom: 97)),
+
               SizedBox(
                 height: 40,
                 width: 250,
-                child: 
-                ElevatedButton(
+                child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromRGBO(100, 198, 97, 1),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(6)
-                    )
-                  ),
+                      backgroundColor: const Color.fromRGBO(100, 198, 97, 1),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(6))),
                   onPressed: () {},
-              child: Text("Continue"),
+                  child: const Text("Continue"),
                 ),
               ),
 
-              
+              const Padding(padding: EdgeInsets.only(bottom: 19)),
 
-              Padding(padding: EdgeInsets.only(bottom: 19)),
-
-              Align(
+              const Align(
                 alignment: Alignment.center,
-                child: Text("Don't have an account? Register!",
-                style: TextStyle(
-                  color: Colors.white
-                ),
+                child: Text(
+                  "Don't have an account? Register!",
+                  style: TextStyle(color: Colors.white),
                 ),
               )
-              
             ],
           ),
         ),
