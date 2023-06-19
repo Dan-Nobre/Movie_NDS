@@ -1,6 +1,9 @@
 import "dart:math";
 
 import "package:flutter/material.dart";
+import "package:movie_nds/app/forgotScreen.dart";
+import "package:movie_nds/app/principalScreen.dart";
+import "package:movie_nds/app/registerScreen.dart";
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -11,6 +14,11 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   bool _showPassword = false;
+
+  void _navigateToPrincipalScreen(BuildContext context) {
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => PrincipalScreen()));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,14 +57,13 @@ class _LoginScreenState extends State<LoginScreen> {
               Row(
                 children: const [
                   Padding(padding: EdgeInsets.only(left: 5)),
-                  
                   Text(
                     "E-mail",
                     style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w900),
-                    ),
+                        color: Colors.white,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w900),
+                  ),
                 ],
               ),
 
@@ -81,14 +88,13 @@ class _LoginScreenState extends State<LoginScreen> {
               Row(
                 children: const [
                   Padding(padding: EdgeInsets.only(left: 5)),
-                  
                   Text(
                     "Password",
                     style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'Poppins',
-                      fontWeight: FontWeight.w900),
-                    ),
+                        color: Colors.white,
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.w900),
+                  ),
                 ],
               ),
 
@@ -122,19 +128,27 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
 
               const Padding(padding: EdgeInsets.only(bottom: 5)),
-
-              
               Row(
                 children: [
                   const Padding(padding: EdgeInsets.only(left: 5)),
-                  const Text(
-                    "Forgot Your Password?",
-                    style: TextStyle(
-                    color: Color(0xff9F9F9F), fontFamily: "Poppins"),
-                  ),
+                  GestureDetector(
+                    // ignore: prefer_const_constructors
+                    child: Text(
+                      "Forgot Your Password?",
+                      // ignore: prefer_const_constructors
+                      style: TextStyle(
+                          color: const Color(0xff9F9F9F),
+                          fontFamily: "Poppins",
+                          fontWeight: FontWeight.w300),
+                    ),
+                    onTap: () {
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              const ForgotScreen()));
+                    },
+                  )
                 ],
               ),
-              
 
               const Padding(padding: EdgeInsets.only(bottom: 97)),
 
@@ -146,19 +160,55 @@ class _LoginScreenState extends State<LoginScreen> {
                       backgroundColor: const Color.fromRGBO(100, 198, 97, 1),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(6))),
-                  onPressed: () {},
-                  child: const Text("Continue"),
+                  onPressed: () {
+                    _navigateToPrincipalScreen(context);
+                  },
+                  child: const Text(
+                    "Continue",
+                    style: TextStyle(
+                        fontFamily: 'Poppins', fontWeight: FontWeight.w900),
+                  ),
                 ),
               ),
 
               const Padding(padding: EdgeInsets.only(bottom: 19)),
 
-              const Align(
-                alignment: Alignment.center,
-                child: Text(
-                  "Don't have an account? Register!",
-                  style: TextStyle(color: Colors.white),
-                ),
+              // ignore: prefer_const_constructors
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+
+                // ignore: prefer_const_literals_to_create_immutables
+                children: [
+                  // ignore: prefer_const_constructors
+                  Text(
+                    "Don't have an account?",
+                    // ignore: prefer_const_constructors
+                    style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+
+                  const Padding(padding: EdgeInsets.only(right: 3)),
+
+                  // ignore: prefer_const_constructors
+                  GestureDetector(
+                    child: Text(
+                      "Register!",
+                      // ignore: prefer_const_constructors
+                      style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.bold,
+                          decoration: TextDecoration.underline,
+                          color: Color(0xff925FF0)),
+                    ),
+                    onTap: () {
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              const RegisterScreen()));
+                    },
+                  )
+                ],
               )
             ],
           ),
