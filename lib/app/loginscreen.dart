@@ -108,7 +108,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
-                    // labelText: 'Password',
                     hintText: 'Password',
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8.0),
@@ -161,7 +160,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(6))),
                   onPressed: () {
-                    _navigateToPrincipalScreen(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => PrincipalScreen()),
+                    );
                   },
                   child: const Text(
                     "Continue",
