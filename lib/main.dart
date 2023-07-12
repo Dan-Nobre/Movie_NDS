@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:movie_nds/app/loginscreen.dart';
+import 'package:movie_nds/app/principalScreen.dart';
+// import 'package:movie_nds/app/CarouselScreen.dart';
+// import 'package:movie_nds/app/loginscreen.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp( MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: LoginScreen(),
+    home: PrincipalScreen(),
   ));
 }

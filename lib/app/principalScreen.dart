@@ -1,20 +1,32 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
+import 'package:movie_nds/app/CardMovie.dart';
+import 'package:movie_nds/app/CarouselScreen.dart';
 
 class PrincipalScreen extends StatefulWidget {
-  // PrincipalScreen({super.key});
-  
+  const PrincipalScreen({Key? key}) : super(key: key);
+
   @override
   State<PrincipalScreen> createState() => _PrincipalScreenState();
 }
 
 class _PrincipalScreenState extends State<PrincipalScreen> {
   final TextEditingController _searchController = TextEditingController();
-  final FocusNode _searchFocusMode = FocusNode();
+  final FocusNode _searchFocusNode = FocusNode();
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    _searchFocusNode.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xffA87FF3),
+        backgroundColor: const Color(0xffA87FF3),
         automaticallyImplyLeading: false,
         title: Row(
           children: [
@@ -23,65 +35,57 @@ class _PrincipalScreenState extends State<PrincipalScreen> {
               fit: BoxFit.contain,
               height: 27,
             ),
-            SizedBox(width: 15),
-            SizedBox(
+            const SizedBox(width: 15),
+            const SizedBox(
               width: 100,
-              child: Text("MovieDB"),
+              child: Text(
+                "MovieDB",
+                style: TextStyle(
+                  fontFamily: "Poppins",
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
             ),
-
-            SizedBox(
-            height: 35,
-            width: 150,
-            child: Expanded(
-              child: TextFormField(
-                focusNode: _searchFocusMode,
-                controller: _searchController,
-                
-                decoration: InputDecoration(
-                  contentPadding: EdgeInsets.fromLTRB(20, 0 , 0, 0),
-                  suffixIcon: Icon(Icons.search),
-                  hintText: 'Search',
-                  filled: true,
-                  fillColor: Colors.white,
-                  enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide.none,
-                    borderRadius: BorderRadius.circular(8)
+            Expanded(
+              child: SizedBox(
+                height: 35,
+                width: 150,
+                child: TextFormField(
+                  focusNode: _searchFocusNode,
+                  controller: _searchController,
+                  decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                    suffixIcon: const Icon(Icons.search),
+                    hintText: 'Search',
+                    filled: true,
+                    fillColor: Colors.white,
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
                   ),
                 ),
               ),
             ),
-            
-            ),
-            
-            // IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
           ],
-          
         ),
         elevation: 0,
       ),
-      body: Container(
-        child: Column(
-          children: [
-            // TextField(
-            //   focusNode: _searchFocusMode,
-            //   controller: _searchController,
-            //   decoration: InputDecoration(
-            //     prefixIcon: Icon(Icons.search),
-            //     hintText: 'Search',
-            //     border: OutlineInputBorder(),
-            //   ),
-            // ),
-              // Expanded(
-              //       child: ListView.builder(
-              //         itemCount: 20,
-              //         itemBuilder: (context, index) {
-              //           return ListTile(
-              //             title: Text('Item $index'),
-              //           );
-              //         },
-              //       ),
-              //     ),
-          ],
+      body: SingleChildScrollView(
+        padding: EdgeInsets.all(20),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const Text("Principais Tendências",),
+              const Padding(padding: EdgeInsets.only(bottom: 10)),
+              const CardMovie(),
+              SizedBox(
+                height: 100,
+                child: CarouselScreen(),
+              )
+              
+            ],
+          ),
         ),
       ),
     );
