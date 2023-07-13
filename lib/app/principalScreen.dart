@@ -28,62 +28,91 @@ class _PrincipalScreenState extends State<PrincipalScreen> {
       appBar: AppBar(
         backgroundColor: const Color(0xffA87FF3),
         automaticallyImplyLeading: false,
-        title: Row(
-          children: [
-            Image.asset(
-              'imagens/Group 1.png',
+        title: Row(children: [
+          IconButton(
+            onPressed: () {
+              // Lógica para abrir o menu
+              // Pode ser um método ou uma função callback
+              // Exemplo: showMenu(context);
+            },
+            icon: Image.asset(
+              'imagens/MenuIcon.png',
               fit: BoxFit.contain,
-              height: 27,
+              height: 35,
             ),
-            const SizedBox(width: 15),
-            const SizedBox(
-              width: 100,
-              child: Text(
-                "MovieDB",
-                style: TextStyle(
-                  fontFamily: "Poppins",
-                  fontWeight: FontWeight.w700,
-                ),
+          ),
+          const SizedBox(
+            width: 69,
+          ),
+          const SizedBox(
+            child: Text(
+              'Movie NDS',
+              style: TextStyle(
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w700,
+                color: Colors.black,
               ),
             ),
-            Expanded(
-              child: SizedBox(
-                height: 35,
-                width: 150,
-                child: TextFormField(
-                  focusNode: _searchFocusNode,
-                  controller: _searchController,
-                  decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                    suffixIcon: const Icon(Icons.search),
-                    hintText: 'Search',
-                    filled: true,
-                    fillColor: Colors.white,
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ]),
+
+        // title: Row(
+        //   children: [
+        //     Image.asset(
+        //       'imagens/Group 1.png',
+        //       fit: BoxFit.contain,
+        //       height: 27,
+        //     ),
+        //     const SizedBox(width: 15),
+        //     const SizedBox(
+        //       width: 100,
+        //       child: Text(
+        //         "MovieDB",
+        //         style: TextStyle(
+        //           fontFamily: "Poppins",
+        //           fontWeight: FontWeight.w700,
+        //         ),
+        //       ),
+        //     ),
+        //     Expanded(
+        //       child: SizedBox(
+        //         height: 35,
+        //         width: 150,
+        //         child: TextFormField(
+        //           focusNode: _searchFocusNode,
+        //           controller: _searchController,
+        //           decoration: InputDecoration(
+        //             contentPadding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+        //             suffixIcon: const Icon(Icons.search),
+        //             hintText: 'Search',
+        //             filled: true,
+        //             fillColor: Colors.white,
+        //             enabledBorder: OutlineInputBorder(
+        //               borderSide: BorderSide.none,
+        //               borderRadius: BorderRadius.circular(8),
+        //             ),
+        //           ),
+        //         ),
+        //       ),
+        //     ),
+        //   ],
+        // ),
         elevation: 0,
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const Text("Principais Tendências",),
+              const Text(
+                "Principais Tendências",
+              ),
               const Padding(padding: EdgeInsets.only(bottom: 10)),
               const CardMovie(),
               SizedBox(
-                height: 100,
+                height: 203,
                 child: CarouselScreen(),
               )
-              
             ],
           ),
         ),

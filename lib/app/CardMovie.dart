@@ -9,9 +9,9 @@ class CardMovieApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
-        body: const CardMovie(),
+        body: CardMovie(),
       ),
     );
   }
@@ -23,22 +23,30 @@ class CardMovie extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Card(
+      
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            ListTile(
-              leading: Image.asset(
-                        "imagens/img_1.png",
-                        height: 200,
-                      ),
-              title: Text('Filme de Ciclano'),
-              subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
+            Container(
+              width: 111,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.grey[200], // Cor de fundo da borda
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset(
+                  "imagens/img_1.png",
+                  height: 183,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
-            Padding(padding: EdgeInsets.all(10))
+            
+            const Padding(padding: EdgeInsets.all(10))
           ],
         ),
-      ),
+      
     );
   }
 }

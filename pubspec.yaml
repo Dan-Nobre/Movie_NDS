@@ -62,6 +62,10 @@ flutter:
   # assets:
   assets:
     - imagens/Group 1.png
+    - imagens/SearchIcon.png
+    - imagens/MenuIcon.png
+    - imagens/SortIcon.png
+    - imagens/ToggleOffIcon.png
     - imagens/img_1.png
     - imagens/img_2.png
     - imagens/img_3.png

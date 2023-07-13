@@ -6,7 +6,7 @@ class CarouselScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
-        children: [
+        children: const [
           CardMovie(),
           CardMovie(),
           CardMovie(),
