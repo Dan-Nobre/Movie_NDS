@@ -1,7 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:movie_nds/app/CardMovie.dart';
+// import 'package:movie_nds/app/CardMovie.dart';
 import 'package:movie_nds/app/CarouselScreen.dart';
 
 class PrincipalScreen extends StatefulWidget {
@@ -103,18 +103,99 @@ class _PrincipalScreenState extends State<PrincipalScreen> {
         padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
                 "Principais Tendências",
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 16,
+                ),
               ),
-              const Padding(padding: EdgeInsets.only(bottom: 10)),
-              const CardMovie(),
+              // const Padding(padding: EdgeInsets.only(bottom: 10)),
               SizedBox(
-                height: 203,
-                child: CarouselScreen(),
-              )
+                width: 400,
+                height: 183,
+                child: ImageCarousel(),
+              ),
+
+              const Text(
+                "Animes",
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 16,
+                ),
+              ),
+          
+              SizedBox(
+                width: 400,
+                height: 183,
+                child: ImageCarousel(),
+              ),
+
+              const Text(
+                "Filmes",
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 16,
+                ),
+              ),
+              
+              SizedBox(
+                width: 400,
+                height: 183,
+                child: ImageCarousel(),
+              ),
+
+              const Text(
+                "Séries que você curtiu",
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 16,
+                ),
+              ),
+              
+              SizedBox(
+                width: 400,
+                height: 183,
+                child: ImageCarousel(),
+              ),
+
+
             ],
           ),
+        ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color(0xffA87FF3
+                ),
+              ),
+              child: Text('Menu'),
+            ),
+            ListTile(
+              title: const Text('Item 1'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Item 2'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+          ],
         ),
       ),
     );

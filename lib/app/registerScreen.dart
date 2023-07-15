@@ -47,12 +47,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 60,
             ),
             
-            Row(
-                children: const [
+            const Row(
+                children: [
                   Padding(padding: EdgeInsets.only(left: 5)),
                   Text(
                     "E-mail",
@@ -64,7 +64,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ],
               ),
             
-            Padding(padding: EdgeInsets.only(bottom: 5)),
+            const Padding(padding: EdgeInsets.only(bottom: 5)),
 
             SizedBox(
                 height: 44,
@@ -81,10 +81,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
             ),
 
-            Padding(padding: EdgeInsets.only(bottom: 21)),
+            const Padding(padding: EdgeInsets.only(bottom: 21)),
 
-            Row(
-                children: const [
+            const Row(
+                children: [
                   Padding(padding: EdgeInsets.only(left: 5)),
                   Text(
                     "Confirm your e-mail",
@@ -96,7 +96,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ],
               ),
             
-            Padding(padding: EdgeInsets.only(bottom: 5)),
+            const Padding(padding: EdgeInsets.only(bottom: 5)),
 
             SizedBox(
                 height: 44,
