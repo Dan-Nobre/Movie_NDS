@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 // import 'package:movie_nds/app/CardMovie.dart';
 import 'package:movie_nds/app/CarouselScreen.dart';
+import 'package:movie_nds/constants.dart';
 
 class PrincipalScreen extends StatefulWidget {
   const PrincipalScreen({Key? key}) : super(key: key);
@@ -26,35 +27,31 @@ class _PrincipalScreenState extends State<PrincipalScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xffA87FF3),
-        automaticallyImplyLeading: false,
-        title: Row(children: [
-          IconButton(
-            onPressed: () {
-              // Lógica para abrir o menu
-              // Pode ser um método ou uma função callback
-              // Exemplo: showMenu(context);
-            },
-            icon: Image.asset(
+      elevation: 0,
+      leading: IconButton(
+        onPressed: (){},
+        icon: Image.asset(
               'imagens/MenuIcon.png',
               fit: BoxFit.contain,
               height: 35,
-            ),
           ),
-          const SizedBox(
-            width: 69,
-          ),
-          const SizedBox(
-            child: Text(
-              'Movie NDS',
-              style: TextStyle(
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w700,
-                color: Colors.black,
-              ),
-            ),
-          ),
-        ]),
+        ),
+        title: const Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(width: defaultPadding / 2),
+            Text('MOVIE NDS',
+            // style: Theme.of(context).textTheme.titleLarge,
+            )
+          ],
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.search),
+          )
+        ],
+
 
         // title: Row(
         //   children: [
@@ -97,7 +94,6 @@ class _PrincipalScreenState extends State<PrincipalScreen> {
         //     ),
         //   ],
         // ),
-        elevation: 0,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
