@@ -1,9 +1,9 @@
 import "dart:math";
 
 import "package:flutter/material.dart";
-import "package:movie_nds/app/forgotScreen.dart";
-import "package:movie_nds/app/principalScreen.dart";
-import "package:movie_nds/app/registerScreen.dart";
+import "package:movie_nds/screens/forgotScreen.dart";
+import "package:movie_nds/screens/principalScreen.dart";
+import "package:movie_nds/screens/registerScreen.dart";
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -194,6 +194,8 @@ class _LoginScreenState extends State<LoginScreen> {
 
                   const Padding(padding: EdgeInsets.only(right: 3)),
 
+
+                  // Add a TextButton here replace text with gesturedetector
                   // ignore: prefer_const_constructors
                   GestureDetector(
                     child: Text(

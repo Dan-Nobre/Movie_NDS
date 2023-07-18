@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_nds/app/loginscreen.dart';
+import 'package:movie_nds/screens/loginscreen.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -12,7 +12,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   bool _showPassword = false;
 
   void _navigateToLoginScreen(BuildContext context) {
-      Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoginScreen()));
+      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const LoginScreen()));
     }
 
   @override
@@ -113,10 +113,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
               ),
             ),
             
-            Padding(padding: EdgeInsets.only(bottom: 21)),
+            const Padding(padding: EdgeInsets.only(bottom: 21)),
 
-            Row(
-                children: const [
+            const Row(
+                children: [
                   Padding(padding: EdgeInsets.only(left: 5)),
                   Text(
                     "Password",
@@ -128,7 +128,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ],
               ),
 
-            Padding(padding: EdgeInsets.only(bottom: 5)),
+            const Padding(padding: EdgeInsets.only(bottom: 5)),
 
             SizedBox(
                 height: 44,
@@ -157,10 +157,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               ),
 
-              Padding(padding: EdgeInsets.only(bottom: 21)),
+              const Padding(padding: EdgeInsets.only(bottom: 21)),
 
-              Row(
-                children: const [
+              const Row(
+                children: [
                   Padding(padding: EdgeInsets.only(left: 5)),
                   Text(
                     "Confirm Password",
@@ -172,7 +172,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ],
               ),
 
-            Padding(padding: EdgeInsets.only(bottom: 5)),
+            const Padding(padding: EdgeInsets.only(bottom: 5)),
 
             SizedBox(
                 height: 44,
@@ -201,7 +201,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
               ),
 
-              Padding(padding: EdgeInsets.only(bottom: 50)),
+              const Padding(padding: EdgeInsets.only(bottom: 50)),
 
               SizedBox(
                 height: 40,

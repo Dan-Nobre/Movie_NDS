@@ -66,6 +66,9 @@ flutter:
     - imagens/MenuIcon.png
     - imagens/SortIcon.png
     - imagens/ToggleOffIcon.png
+    - imagens/FilterIcon.png
+    - imagens/FilterIcon2.png
+    - imagens/MenuOpenIcon.png
     - imagens/img_1.png
     - imagens/img_2.png
     - imagens/img_3.png
