@@ -51,7 +51,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               height: 60,
             ),
             
-            const Row(
+            Row(
                 children: [
                   Padding(padding: EdgeInsets.only(left: 5)),
                   Text(
@@ -83,7 +83,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
             const Padding(padding: EdgeInsets.only(bottom: 21)),
 
-            const Row(
+            Row(
                 children: [
                   Padding(padding: EdgeInsets.only(left: 5)),
                   Text(
@@ -115,7 +115,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             
             const Padding(padding: EdgeInsets.only(bottom: 21)),
 
-            const Row(
+            Row(
                 children: [
                   Padding(padding: EdgeInsets.only(left: 5)),
                   Text(
@@ -159,7 +159,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
               const Padding(padding: EdgeInsets.only(bottom: 21)),
 
-              const Row(
+              Row(
                 children: [
                   Padding(padding: EdgeInsets.only(left: 5)),
                   Text(
